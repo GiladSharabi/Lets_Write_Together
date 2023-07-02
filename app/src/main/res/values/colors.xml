@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red400">#F34343</color>
+    <color name="yellow400">#FFBF20</color>
+    <color name="orange800">#EC9A05</color>
+    <color name="blue200">#21ADFA</color>ג
+    <color name="azure200">#41E9FF</color>ג
+    <color name="light_blue200">#00E1FF</color>ג
+
+    <color name="dark_cream">#D8CFAF</color>ג
+    <color name="deep_dark_cream">#CAB78D</color>ג
+    <color name="rich_dark_cream">#BFA77E</color>ג
+    <color name="intense_dark_cream">#AB966D</color>ג
+    <color name="bold_dark_cream">#9C875E</color>ג
+
+    <color name="medium_cream">#E7DCC7</color>ג
+    <color name="neutral_cream">#DDD0B8</color>ג
+    <color name="warm_cream">#DACFB0</color>ג
+    <color name="subtle_cream">#D3C2A1</color>ג
+    <color name="balanced_cream">#CAB492</color>
+
+    <color name="light_cream">#F4EAD3</color>ג
+    <color name="pale_cream">#F7F3E7</color>ג
+    <color name="soft_cream">#EDE5D7</color>ג
+    <color name="ivory_cream">#FDF3E7</color>ג
+    <color name="creamy_white">#FFF9ED</color>ג
+
+
+    <color name="pastel_blue">#AEC9E3</color>ג
+    <color name="pale_sky_blue">#B9D7E8</color>ג
+    <color name="baby_blue">#C9E3F2</color>ג
+    <color name="powder_blue">#D4EAF7</color>ג
+    <color name="light_cornflower_blue">#DBF0FA</color>ג
+
+    <color name="dark_pastel_blue">#7393B5</color>
+    <color name="deep_pale_sky_blue">#84A9C0</color>
+    <color name="midnight_blue">#496D86</color>
+    <color name="rich_powder_blue">#90B3D8</color>
+    <color name="slate_blue">#6A8FB3</color>
+
+
+
+
+</resources>

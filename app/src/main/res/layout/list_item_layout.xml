@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listItem_LL_song"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/listItem_TV_songName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/akaya_telivigala"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"/>
+
+    <TextView
+        android:id="@+id/listItem_TV_creatorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/akaya_telivigala"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"/>
+
+
+
+</LinearLayout>

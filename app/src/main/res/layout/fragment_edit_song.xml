@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cream_paper4">
+
+    <LinearLayout
+        android:id="@+id/editSong_LL_songDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/editSong_TV_songName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="Song Name"
+            android:fontFamily="@font/akaya_telivigala"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/editSong_TV_songCreator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="By Creator Name"
+            android:fontFamily="@font/akaya_telivigala"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            />
+        <TextView
+            android:id="@+id/editSong_TV_songText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/courgette_regular"
+            android:text="@string/song_text_example"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/editSong_EText_newText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="15dp"
+            android:inputType="textMultiLine|textCapSentences"
+            android:fontFamily="@font/courgette_regular"
+            android:maxLength="@integer/maxLetters"
+            android:hint="@string/enter_text_here"
+            android:textColorHint="@color/black"
+            android:backgroundTint="@color/black"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/editSong_RL_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editSong_BTN_saveChanges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="@string/save_changes"
+            android:fontFamily="@font/oleo_script_regular"
+            android:backgroundTint="@color/baby_blue"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editSong_BTN_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editSong_BTN_saveChanges"
+            android:layout_marginTop="10dp"
+            android:text="@string/cancel"
+            android:fontFamily="@font/oleo_script_regular"
+            android:backgroundTint="@color/pale_sky_blue"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

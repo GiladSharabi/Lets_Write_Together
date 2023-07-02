@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/cream_paper1">
+
+    <LinearLayout
+        android:id="@+id/main_LL_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:id="@+id/menu_LL_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/menu_BTN_search_songs"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:backgroundTint="@color/dark_cream"
+                android:fontFamily="@font/caprasimo_regular"
+                android:text="@string/search_songs"
+                android:textColor="@color/black"
+                app:cornerRadius="0dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/menu_BTN_my_songs"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:backgroundTint="@color/dark_cream"
+                android:fontFamily="@font/caprasimo_regular"
+                android:text="@string/my_songs"
+                android:textColor="@color/black"
+                app:cornerRadius="0dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_LL_mid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/menu_BTN_participated_songs"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:backgroundTint="@color/dark_cream"
+                android:fontFamily="@font/caprasimo_regular"
+                android:text="@string/participated_songs"
+                android:textColor="@color/black"
+                app:cornerRadius="0dp"
+                android:layout_marginEnd="20dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/menu_BTN_favorites"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:backgroundTint="@color/dark_cream"
+                android:fontFamily="@font/caprasimo_regular"
+                android:text="@string/my_favorites"
+                android:textColor="@color/black"
+                app:cornerRadius="0dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_LL_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/menu_BTN_create_new_song"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:backgroundTint="@color/dark_cream"
+                android:fontFamily="@font/caprasimo_regular"
+                android:text="@string/create_new_song"
+                android:textColor="@color/black"
+                app:cornerRadius="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/menu_BTN_log_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/dark_cream"
+                android:layout_gravity="center"
+                android:fontFamily="@font/courgette_regular"
+                android:text="@string/log_out"
+                android:textColor="@color/black"
+                app:cornerRadius="0dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Let\'s Write Together</string>
+
+    <string name="search_songs">Search Songs</string>
+    <string name="search">Search</string>
+    <string name="my_songs">My Songs</string>
+    <string name="participated_songs">Participated Songs</string>
+    <string name="my_favorites">My Favorites</string>
+    <string name="create_new_song">Create New Song</string>
+    <string name="log_out">Log Out</string>
+    <string name="song_text_example">This is an example for a song text to check the boundaries</string>
+    <string name="creator">Creator:</string>
+    <string name="title">Title:</string>
+    <string name="text">Text:</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit_song">Edit Song</string>
+    <string name="back">Back</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="enter_text_here">Enter Text Here</string>
+
+
+    <string name="error">Error</string>
+    <string name="please_fill_in_all_the_fields">"Please fill in all the fields"</string>
+    <string name="ok">"OK"</string>
+
+</resources>

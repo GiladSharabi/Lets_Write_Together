@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.MainActivity"
+    android:background="@drawable/cream_paper1">
+
+    <RelativeLayout
+        android:id="@+id/main_RL_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/main_LL_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_alignParentStart="true">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_SIV_star_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_star2"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/main_TV_stars_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:padding="10dp"
+                android:text="0"
+                android:textSize="40dp"
+                android:textColor="@color/black">
+            </TextView>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/main_BTN_home"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/rich_powder_blue"
+            app:cornerRadius="0dp"
+            app:icon="@drawable/icon_home"
+            app:iconSize="30dp"
+            app:iconTint="@color/black"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"/>
+
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/main_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/main_RL_top_bar"
+        />
+</RelativeLayout>

@@ -10,11 +10,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import com.example.letswritetogether.Activities.MainActivity;
 import com.example.letswritetogether.Interfaces.FragmentChange_Callback;
 import com.example.letswritetogether.Interfaces.Backable;
@@ -22,7 +20,6 @@ import com.example.letswritetogether.Models.Song;
 import com.example.letswritetogether.R;
 import com.example.letswritetogether.Utilities.DataManager;
 import com.google.android.material.button.MaterialButton;
-
 import java.util.ArrayList;
 
 public class SearchSongsFragment extends Fragment implements Backable {
@@ -106,11 +103,9 @@ public class SearchSongsFragment extends Fragment implements Backable {
         songList_BTN_search = view.findViewById(R.id.songList_BTN_search);
         songList_EText_search = view.findViewById(R.id.songList_EText_search);
     }
-
     @Override
     public void onResume() {
         super.onResume();
         songList_EText_search.setText("");
-//        adapter.notifyDataSetChanged();
     }
 }

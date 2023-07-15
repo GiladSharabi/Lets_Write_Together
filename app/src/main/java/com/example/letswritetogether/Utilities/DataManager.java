@@ -25,8 +25,6 @@ public class DataManager {
     public void removeSongFromFavorites(String currentSongID) {
         user.getFavoriteSongs().getList().remove(currentSongID);
     }
-
-
     public ArrayList<Song> getSongList() {
         return songList;
     }
@@ -87,7 +85,6 @@ public class DataManager {
     public int findSongIndexByID(String songID) {
         for (int i = 0; i < this.songList.size(); i++) {
             if (songID.equals(songList.get(i).getSongID())) {
-                Log.d("foundSong", "");
                 return i;
             }
         }
@@ -128,9 +125,6 @@ public class DataManager {
     }
 
     public boolean isSongFavorite(String currentSongID) {
-//        Log.d("arrLength", Integer.toString(user.getUserSongsData().getFavoritesSongs().size()));
-//        if (user.getFavoriteSongs() == null)
-//            return false;
         for (int i = 0; i < user.getFavoriteSongs().getList().size(); i++) {
             String temp = user.getFavoriteSongs().getList().get(i);
             if (temp.equals(currentSongID))
@@ -138,7 +132,6 @@ public class DataManager {
         }
         return false;
     }
-
     public ArrayList<Song> createUserSongList(String listName) {
         ArrayList<Song> list = new ArrayList<>();
         if (listName == null) {
@@ -174,11 +167,9 @@ public class DataManager {
                 }
             }
         }
-        Log.d("THE_LIST", list.toString());
         return list;
     }
     public Song getDisplayedSong() {
         return getSongByID(currentSongID);
-
     }
 }

@@ -1,20 +1,20 @@
 package com.example.letswritetogether.Activities;
 
+import static com.example.letswritetogether.Utilities.Constants.ERROR_FIND_USER;
 import static com.example.letswritetogether.Utilities.Constants.SONG_CREATOR_KEY;
 import static com.example.letswritetogether.Utilities.Constants.SONG_NAME_KEY;
 import static com.example.letswritetogether.Utilities.Constants.SONG_TEXT_KEY;
 import static com.example.letswritetogether.Utilities.Constants.UID_KEY;
-
+import static com.example.letswritetogether.Utilities.Constants.WELCOME_NEW_USER;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.bumptech.glide.Glide;
 import com.example.letswritetogether.Fragments.EditSongFragment;
 import com.example.letswritetogether.Fragments.MyFavoritesFragment;
 import com.example.letswritetogether.Fragments.MySongsFragment;
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private MyFavoritesFragment myFavoritesFragment;
     private ParticipatedSongsFragment participatedSongsFragment;
     // -------------------------------------------------
+    private AppCompatImageView main_IMG_background;
     private TextView main_TV_stars_count;
     private MaterialButton main_BTN_home;
     private FrameLayout main_frame_layout;
@@ -78,25 +79,21 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void user_found(User user) {
             DataManager.getInstance().setUser(user);
-            Log.d("theUser", DataManager.getInstance().getUser().toString());
             int stars = user.getStars();
             main_TV_stars_count.setText(Integer.toString(stars));
             SignalGenerator.getInstance().toast("Welcome Back", Toast.LENGTH_SHORT);
         }
-
         @Override
         public void new_user_created(User user) {
             DataManager.getInstance().setUser(user);
-            Log.d("theUser", DataManager.getInstance().getUser().toString());
             int stars = user.getStars();
             main_TV_stars_count.setText(Integer.toString(stars));
 
-            SignalGenerator.getInstance().toast("Welcome New User", Toast.LENGTH_SHORT);
+            SignalGenerator.getInstance().toast(WELCOME_NEW_USER, Toast.LENGTH_SHORT);
         }
-
         @Override
         public void error() {
-            SignalGenerator.getInstance().toast("Error find user", Toast.LENGTH_SHORT);
+            SignalGenerator.getInstance().toast(ERROR_FIND_USER, Toast.LENGTH_SHORT);
         }
     };
     private UpdateUserStars_Callback updateUserStars_callback = new UpdateUserStars_Callback() {
@@ -111,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
             songViewFragment.songChangeEvent(song);
         }
     };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -124,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
         findViews();
         initViews();
         beginTransactions();
-
     }
     private void changeHomeButtonVisibility(Fragment fragment) {
         if (fragment instanceof MenuFragment || fragment instanceof EditSongFragment
@@ -134,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
             main_BTN_home.setVisibility(View.VISIBLE);
         }
     }
-
     private void getUserFromDB(String userID) {
         MyDB.getInstance().getUserByID(userID);
     }
@@ -144,14 +138,18 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.main_frame_layout, fragment)
                 .addToBackStack(String.valueOf(fragment.getId()))
                 .commit();
-
     }
-
     private void findViews() {
+        main_IMG_background = findViewById(R.id.main_IMG_background);
         main_TV_stars_count = findViewById(R.id.main_TV_stars_count);
         main_frame_layout = findViewById(R.id.main_frame_layout);
-//        main_BTN_home = findViewById(R.id.main_BTN_home);
         main_BTN_home = findViewById(R.id.main_BTN_home);
+        Glide
+                .with(this)
+                .load(R.drawable.cream_paper1)
+                .centerCrop()
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(main_IMG_background);
     }
 
     private void initViews() {
@@ -182,7 +180,6 @@ public class MainActivity extends AppCompatActivity {
         mySongsFragment.setFragmentChange_callback(fragmentChange_callback);
         myFavoritesFragment.setFragmentChange_callback(fragmentChange_callback);
         participatedSongsFragment.setFragmentChange_callback(fragmentChange_callback);
-
     }
 
     private void beginTransactions() {
@@ -190,7 +187,10 @@ public class MainActivity extends AppCompatActivity {
                 .addToBackStack(String.valueOf(menuFragment.getId()))
                 .commit();
     }
-
+    @Override
+    public void onBackPressed() {
+        fragmentChange_callback.onFragmentChange(menuFragment,null);
+    }
     public MenuFragment getMenuFragment() {
         return menuFragment;
     }
@@ -216,8 +216,4 @@ public class MainActivity extends AppCompatActivity {
         return mySongsFragment;
     }
 
-    @Override
-    public void onBackPressed() {
-        fragmentChange_callback.onFragmentChange(menuFragment,null);
-    }
 }

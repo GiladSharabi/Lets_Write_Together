@@ -3,6 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/cream_paper4">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/songView_IMG_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
     <LinearLayout
         android:id="@+id/songView_LL_songDetails"
         android:layout_width="match_parent"

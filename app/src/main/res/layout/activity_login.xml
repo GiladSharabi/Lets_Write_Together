@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/cream_paper1">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="20dp"
+        android:layout_alignParentStart="true"
+        android:text="@string/lets_write_together"
+        android:textSize="70sp"
+        android:fontFamily="@font/oleo_script_bold">
+    </TextView>
 </RelativeLayout>

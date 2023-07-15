@@ -4,6 +4,9 @@ public class Constants {
     public static final String SONGS_KEY_DB = "SONGS";
     public static final String USERS_KEY_DB = "USERS";
     public static final String UID_KEY = "UID_KEY";
+    public static final String LOGIN_FAILED = "Login failed";
+    public static final String WELCOME_NEW_USER = "Welcome New User";
+    public static final String ERROR_FIND_USER = "Error find user";
     public static final String SONG_NAME_KEY = "SONG_NAME_KEY";
     public static final String SONG_CREATOR_KEY = "SONG_CREATOR_KEY";
     public static final String SONG_TEXT_KEY = "SONG_TEXT_KEY";

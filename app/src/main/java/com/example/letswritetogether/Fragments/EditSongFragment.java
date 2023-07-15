@@ -2,7 +2,6 @@ package com.example.letswritetogether.Fragments;
 
 import static com.example.letswritetogether.Utilities.Constants.SONG_UNDER_LOCK;
 import static com.example.letswritetogether.Utilities.Constants.THE_TEXT_IS_EMPTY;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 import com.example.letswritetogether.Activities.MainActivity;
 import com.example.letswritetogether.Interfaces.FragmentChange_Callback;
@@ -21,6 +22,7 @@ import com.example.letswritetogether.Utilities.SignalGenerator;
 import com.google.android.material.button.MaterialButton;
 
 public class EditSongFragment extends Fragment {
+    private AppCompatImageView editSong_IMG_background;
     private TextView editSong_TV_songName;
     private TextView editSong_TV_songCreator;
     private TextView editSong_TV_songText;
@@ -34,7 +36,6 @@ public class EditSongFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_edit_song, container, false);
         findViews(view);
         initViews();
-
         return view;
     }
     public void setFragmentChange_callback(FragmentChange_Callback callback) {
@@ -64,8 +65,8 @@ public class EditSongFragment extends Fragment {
         });
         setTextViews();
     }
-
     private void findViews(View view) {
+        editSong_IMG_background = view.findViewById(R.id.editSong_IMG_background);
         editSong_TV_songName = view.findViewById(R.id.editSong_TV_songName);
         editSong_TV_songCreator = view.findViewById(R.id.editSong_TV_songCreator);
         editSong_TV_songText = view.findViewById(R.id.editSong_TV_songText);

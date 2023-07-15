@@ -29,13 +29,11 @@ import com.google.android.material.button.MaterialButton;
 import java.util.ArrayList;
 
 public class MyFavoritesFragment extends Fragment implements Backable {
-
     private ListView listView;
     private LinearLayout listItem_LL_song;
     private MaterialButton songList_BTN_search;
     private EditText songList_EText_search;
     private FragmentChange_Callback fragmentChange_callback;
-    //    private ArrayList<Song> songArrayList = new ArrayList<>();
     private ArrayList<Song> filterSongs;
     private ArrayAdapter<Song> adapter;
 
@@ -45,7 +43,6 @@ public class MyFavoritesFragment extends Fragment implements Backable {
         View view = inflater.inflate(R.layout.fragment_song_list, container, false);
         findViews(view);
         initViews();
-        Log.d("DataManagerSongList", "Size: " + DataManager.getInstance().getSongList().size() + "\n" + DataManager.getInstance().getSongList().toString());
         return view;
     }
 
@@ -101,18 +98,15 @@ public class MyFavoritesFragment extends Fragment implements Backable {
         adapter.addAll(filterSongs);
         adapter.notifyDataSetChanged();
     }
-
     public ArrayAdapter<Song> getAdapter() {
         return adapter;
     }
-
     private void findViews(View view) {
         listView = view.findViewById(R.id.songList_ListView_list);
         listItem_LL_song = view.findViewById(R.id.listItem_LL_song);
         songList_BTN_search = view.findViewById(R.id.songList_BTN_search);
         songList_EText_search = view.findViewById(R.id.songList_EText_search);
     }
-
     @Override
     public void onResume() {
         super.onResume();

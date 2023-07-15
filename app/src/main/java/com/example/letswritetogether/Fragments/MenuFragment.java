@@ -2,22 +2,23 @@ package com.example.letswritetogether.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.letswritetogether.Activities.LoginActivity;
 import com.example.letswritetogether.Activities.MainActivity;
 import com.example.letswritetogether.Interfaces.FragmentChange_Callback;
 import com.example.letswritetogether.R;
-import com.example.letswritetogether.Utilities.DataManager;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MenuFragment extends Fragment {
+    private AppCompatImageView menu_IMG_background;
     private MaterialButton menu_BTN_log_out;
     private MaterialButton menu_BTN_create_new_song;
     private MaterialButton menu_BTN_favorites;
@@ -75,15 +76,19 @@ public class MenuFragment extends Fragment {
         startActivity(intent);
         getActivity().finish();
     }
-
     private void findViews(View view) {
+        menu_IMG_background = view.findViewById(R.id.menu_IMG_background);
         menu_BTN_log_out = view.findViewById(R.id.menu_BTN_log_out);
         menu_BTN_create_new_song = view.findViewById(R.id.menu_BTN_create_new_song);
         menu_BTN_favorites = view.findViewById(R.id.menu_BTN_favorites);
         menu_BTN_participated_songs = view.findViewById(R.id.menu_BTN_participated_songs);
         menu_BTN_my_songs = view.findViewById(R.id.menu_BTN_my_songs);
         menu_BTN_search_songs = view.findViewById(R.id.menu_BTN_search_songs);
+        Glide
+                .with(this)
+                .load(R.drawable.cream_paper1)
+                .centerCrop()
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(menu_IMG_background);
     }
-
-
 }

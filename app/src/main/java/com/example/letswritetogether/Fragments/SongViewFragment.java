@@ -8,7 +8,6 @@ import static com.example.letswritetogether.Utilities.Constants.SONG_TEXT_KEY;
 import static com.example.letswritetogether.Utilities.Constants.SONG_UNDER_EDIT;
 import static com.example.letswritetogether.Utilities.Constants.SONG_UNDER_LOCK;
 import static com.example.letswritetogether.Utilities.Constants.UNKNOWN_ERROR;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,10 +15,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.letswritetogether.Activities.MainActivity;
-import com.example.letswritetogether.Interfaces.DisplayedSongChange_Callback;
 import com.example.letswritetogether.Interfaces.FragmentChange_Callback;
 import com.example.letswritetogether.Models.Song;
 import com.example.letswritetogether.R;
@@ -30,6 +30,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
 
 public class SongViewFragment extends Fragment {
+    private AppCompatImageView songView_IMG_background;
     private TextView songView_TV_songName;
     private TextView songView_TV_songCreator;
     private TextView songView_TV_songText;
@@ -49,7 +50,6 @@ public class SongViewFragment extends Fragment {
         songView_TV_songName.setText(bundle.getString(SONG_NAME_KEY));
         songView_TV_songCreator.setText(bundle.getString(SONG_CREATOR_KEY));
         songView_TV_songText.setText(bundle.getString(SONG_TEXT_KEY));
-
         return view;
     }
 
@@ -98,7 +98,6 @@ public class SongViewFragment extends Fragment {
 
         });
     }
-
     private void setFavoriteIcon() {
         if (DataManager.getInstance().isSongFavorite(DataManager.getInstance().getCurrentSongID())) {
             songView_IMG_favorite.setImageResource(R.drawable.heart);
@@ -106,7 +105,6 @@ public class SongViewFragment extends Fragment {
             songView_IMG_favorite.setImageResource(R.drawable.heart_empty);
         }
     }
-
     private void setLockIcon() {
         Song song = DataManager.getInstance().getDisplayedSong();
         if (song != null) {
@@ -122,7 +120,6 @@ public class SongViewFragment extends Fragment {
             }
         }
     }
-
     private boolean isSongEditable() {
         Song song = DataManager.getInstance().getDisplayedSong();
         if (song == null) {
@@ -143,8 +140,8 @@ public class SongViewFragment extends Fragment {
         }
         return true;
     }
-
     private void findViews(View view) {
+        songView_IMG_background = view.findViewById(R.id.songView_IMG_background);
         songView_TV_songName = view.findViewById(R.id.songView_TV_songName);
         songView_TV_songCreator = view.findViewById(R.id.songView_TV_songCreator);
         songView_TV_songText = view.findViewById(R.id.songView_TV_songText);
@@ -152,9 +149,13 @@ public class SongViewFragment extends Fragment {
         songView_BTN_back = view.findViewById(R.id.songView_BTN_back);
         songView_IMG_favorite = view.findViewById(R.id.songView_IMG_favorite);
         songView_IMG_lock = view.findViewById(R.id.songView_IMG_lock);
+        Glide
+                .with(this)
+                .load(R.drawable.cream_paper4)
+                .centerCrop()
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(songView_IMG_background);
     }
-
-
     public TextView getSongView_TV_songName() {
         return songView_TV_songName;
     }

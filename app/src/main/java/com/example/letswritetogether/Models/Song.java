@@ -1,6 +1,6 @@
 package com.example.letswritetogether.Models;
 
-public class Song implements Cloneable {
+public class Song {
     private String songID = "";
     private String creatorID = "";
     private String creatorName = "";
@@ -21,11 +21,6 @@ public class Song implements Cloneable {
         this.accessible = accessible;
         this.lock_mode = false;
     }
-    @Override
-    public Song clone() throws CloneNotSupportedException {
-        return (Song)super.clone();
-    }
-
     @Override
     public String toString() {
         return "Song{" +

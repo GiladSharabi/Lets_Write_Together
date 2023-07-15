@@ -8,8 +8,6 @@ public class UserSongsData {
 
     public UserSongsData() {
     }
-
-
     public UserSongsData(String name) {
         this.name = name;
     }

@@ -5,6 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/cream_paper4">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cns_IMG_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <LinearLayout
         android:id="@+id/cns_LL_main"
         android:layout_width="match_parent"

@@ -1,8 +1,6 @@
 package com.example.letswritetogether.Fragments;
 
-import static com.example.letswritetogether.Utilities.Constants.SONGS_CREATED_LIST_KEY;
 import static com.example.letswritetogether.Utilities.Constants.SONGS_PARTICIPATED_LIST_KEY;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,11 +12,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import com.example.letswritetogether.Activities.MainActivity;
 import com.example.letswritetogether.Interfaces.FragmentChange_Callback;
 import com.example.letswritetogether.Interfaces.Backable;
@@ -26,7 +22,6 @@ import com.example.letswritetogether.Models.Song;
 import com.example.letswritetogether.R;
 import com.example.letswritetogether.Utilities.DataManager;
 import com.google.android.material.button.MaterialButton;
-
 import java.util.ArrayList;
 
 public class ParticipatedSongsFragment extends Fragment implements Backable {
@@ -34,13 +29,10 @@ public class ParticipatedSongsFragment extends Fragment implements Backable {
     private ListView listView;
     private LinearLayout listItem_LL_song;
     private MaterialButton songList_BTN_search;
-
-
     private EditText songList_EText_search;
     private FragmentChange_Callback fragmentChange_callback;
     private ArrayList<Song> filterSongs;
     private ArrayAdapter<Song> adapter;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,7 +40,6 @@ public class ParticipatedSongsFragment extends Fragment implements Backable {
         View view = inflater.inflate(R.layout.fragment_song_list, container, false);
         findViews(view);
         initViews();
-        Log.d("DataManagerSongList", "Size: " + DataManager.getInstance().getSongList().size() + "\n" + DataManager.getInstance().getSongList().toString());
         return view;
     }
 
@@ -83,7 +74,6 @@ public class ParticipatedSongsFragment extends Fragment implements Backable {
                 }
             }
         });
-
         songList_BTN_search.setOnClickListener(v -> {
             String searchText = songList_EText_search.getText().toString();
             filterTheSongs(searchText);

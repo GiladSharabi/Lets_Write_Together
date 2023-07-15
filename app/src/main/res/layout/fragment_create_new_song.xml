@@ -17,30 +17,6 @@
         android:orientation="vertical"
         android:padding="10dp">
         <LinearLayout
-            android:id="@+id/cns_LL_creator"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
-            <TextView
-                android:id="@+id/cns_TView_creator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/akaya_telivigala"
-                android:text="@string/creator"
-                android:textSize="30dp"
-                android:textColor="@color/black"
-                android:layout_marginEnd="10dp"/>
-            <EditText
-                android:id="@+id/cns_EText_creator"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:inputType="textMultiLine|textCapSentences"
-                android:backgroundTint="@color/black"
-                />
-        </LinearLayout>
-        <LinearLayout
             android:id="@+id/cns_LL_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,6 +38,30 @@
                 android:textColor="@color/black"
                 android:backgroundTint="@color/black"
                 android:inputType="textMultiLine|textCapSentences"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/cns_LL_creator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:id="@+id/cns_TView_creator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/akaya_telivigala"
+                android:text="@string/creator"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="10dp"/>
+            <EditText
+                android:id="@+id/cns_EText_creator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:inputType="textMultiLine|textCapSentences"
+                android:backgroundTint="@color/black"
                 />
         </LinearLayout>
 

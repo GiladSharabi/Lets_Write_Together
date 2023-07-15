@@ -14,6 +14,7 @@ import com.example.letswritetogether.Activities.LoginActivity;
 import com.example.letswritetogether.Activities.MainActivity;
 import com.example.letswritetogether.Interfaces.FragmentChange_Callback;
 import com.example.letswritetogether.R;
+import com.example.letswritetogether.Utilities.MyDB;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -71,10 +72,11 @@ public class MenuFragment extends Fragment {
 
     }
     private void logOut() {
+//        MyDB.getInstance().detachListeners();
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(getActivity(), LoginActivity.class);
         startActivity(intent);
-        getActivity().finish();
+        requireActivity().finish();
     }
     private void findViews(View view) {
         menu_IMG_background = view.findViewById(R.id.menu_IMG_background);

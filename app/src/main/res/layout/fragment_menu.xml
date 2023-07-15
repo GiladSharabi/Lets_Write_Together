@@ -104,6 +104,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/courgette_regular"
                 android:text="@string/log_out"
+                android:textSize="15sp"
                 android:textColor="@color/black"
                 app:cornerRadius="0dp" />
 

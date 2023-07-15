@@ -2,6 +2,7 @@
     <string name="app_name">Let\'s Write Together</string>
 
     <string name="lets_write_together">Let\'s\nWrite\nTogether</string>
+    <string name="login">Login</string>
     <string name="search_songs">Search Songs</string>
     <string name="search">Search</string>
     <string name="my_songs">My Songs</string>

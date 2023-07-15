@@ -16,14 +16,11 @@ public class Constants {
     public static final String SONG_UNDER_LOCK = "The song is locked by the creator";
     public static final String SONG_ALREADY_EDIT_BY_USER = "You edited the song once already";
     public static final String SONG_CREATED_BY_YOU_ERROR = "You created the song and cannot edit it again";
-    public static final int INITIAL_STARS_COUNT = 200;
+    public static final int INITIAL_STARS_COUNT = 30;
     public static final int CREATE_NEW_SONG_COST = 10;
     public static final int EDIT_SONG_REWARD = 5;
     public static final String NOT_ENOUGH_STARS_FOR_CREATE_SONG = "You need 10 stars to create new song";
-
     public static final String SONGS_CREATED_LIST_KEY = "songsCreated";
     public static final String SONGS_PARTICIPATED_LIST_KEY = "participatedSongs";
     public static final String SONGS_FAVORITE_LIST_KEY = "favoriteSongs";
-
-
 }

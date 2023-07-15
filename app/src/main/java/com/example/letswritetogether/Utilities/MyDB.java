@@ -30,20 +30,20 @@ public class MyDB {
 
     private static MyDB instance = new MyDB();
     private FirebaseDatabase db;
-    DatabaseReference songsRef;
-    DatabaseReference usersRef;
-    FindUser_Callback findUser_callback;
-    UpdateUserStars_Callback updateUserStars_callback;
-    DisplayedSongChange_Callback displayedSongChange_callback;
+    private DatabaseReference songsRef;
+    private DatabaseReference usersRef;
+    private FindUser_Callback findUser_callback;
+    private UpdateUserStars_Callback updateUserStars_callback;
+    private DisplayedSongChange_Callback displayedSongChange_callback;
     public MyDB() {
         db = FirebaseDatabase.getInstance();
         songsRef = db.getReference(SONGS_KEY_DB);
         usersRef = db.getReference(USERS_KEY_DB);
-        registerForSongUpdates();
         registerForUserUpdates();
+        registerForSongUpdates();
     }
 
-    private void registerForUserUpdates() {
+    public void registerForUserUpdates() {
         usersRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -74,7 +74,7 @@ public class MyDB {
         });
     }
 
-    private void registerForSongUpdates() {
+    public void registerForSongUpdates() {
         songsRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -89,7 +89,6 @@ public class MyDB {
                 if (displayedSongChange_callback != null) {
                     displayedSongChange_callback.onChange(song);
                 }
-
             }
 
             @Override
@@ -105,7 +104,7 @@ public class MyDB {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                SignalGenerator.getInstance().toast("Song Listener Error",Toast.LENGTH_SHORT);
             }
         });
     }
@@ -137,7 +136,6 @@ public class MyDB {
                     public void onSuccess(Void unused) {
 //                        DataManager.getInstance().setCurrentSongID(songKey);
                         addSongToUserListInDB(songKey, SONGS_CREATED_LIST_KEY);
-//                        SignalGenerator.getInstance().toast("Song added successfully to DB", Toast.LENGTH_SHORT);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -304,4 +302,17 @@ public class MyDB {
         this.displayedSongChange_callback = displayedSongChange_callback;
         return this;
     }
+
+//    public void detachUserListener() {
+//        usersRef.removeEventListener(userChildEventListener);
+//    }
+//
+//    public void detachSongsListener() {
+//        songsRef.removeEventListener(songsChildEventListener);
+//    }
+//    public void detachListeners() {
+//        detachUserListener();
+//        detachSongsListener();
+//    }
+
 }

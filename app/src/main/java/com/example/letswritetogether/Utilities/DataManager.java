@@ -73,6 +73,7 @@ public class DataManager {
 
     public void addSong(Song song) {
         this.songList.add(song);
+        Log.d("addSong",this.songList.toString());
     }
 
     public void songChangeEvent(Song song) {
@@ -134,6 +135,7 @@ public class DataManager {
     }
     public ArrayList<Song> createUserSongList(String listName) {
         ArrayList<Song> list = new ArrayList<>();
+        Log.d("AllSongs",this.songList.toString());
         if (listName == null) {
             for (int i = 0; i < songList.size(); i++) {
                 Song song = songList.get(i);

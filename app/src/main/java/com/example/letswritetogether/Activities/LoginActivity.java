@@ -10,28 +10,42 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.letswritetogether.R;
+import com.example.letswritetogether.Utilities.MyDB;
 import com.example.letswritetogether.Utilities.SignalGenerator;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
 import com.firebase.ui.auth.IdpResponse;
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import java.util.Arrays;
 import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
+    private MaterialButton login_BTN_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        findViews();
+        initViews();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user == null)
-            login();
-        else
+        if (user != null)
             moveToMainActivity(user);
     }
+
+    private void initViews() {
+        login_BTN_login.setOnClickListener(v-> {
+            login();
+        });
+    }
+
+    private void findViews() {
+        login_BTN_login = findViewById(R.id.login_BTN_login);
+    }
+
     private void login() {
         // Choose authentication providers
         List<AuthUI.IdpConfig> providers = Arrays.asList(

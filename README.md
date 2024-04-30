@@ -50,7 +50,7 @@ We value your feedback! If you have any suggestions, bug reports, or feature req
 
 ## Credits
 
-Let's Write Together was created by [Your Name]. Special thanks to the developers and contributors who helped make this project possible.
+Let's Write Together was created by Gilad Sharabi.
 
 ## License
 

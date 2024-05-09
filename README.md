@@ -51,7 +51,3 @@ I value your feedback! If you have any suggestions, bug reports, or feature requ
 ## Credits
 
 Let's Write Together was created by Gilad Sharabi.
-
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
